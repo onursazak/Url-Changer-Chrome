@@ -1,10 +1,7 @@
-let changeColor = document.getElementById('changeColor');
-
 let btnDev1 = document.getElementById('btn-dev1');
 let btnProduction = document.getElementById('btn-production');
 let btnLocal = document.getElementById('btn-local');
 
-let pathName = window.location.pathname;
 let devUrl = "http://www1.dev.odamax.com";
 let productionUrl = "http://www.odamax.com";
 let localUrl = "http://localhost:8080"
