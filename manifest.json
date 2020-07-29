@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
+  "name": "Url Changer",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "This extension enables switching between previously determined links.",
   "permissions": ["declarativeContent","storage","activeTab","tabs"],
   "background": {
       "scripts": ["background.js"],
