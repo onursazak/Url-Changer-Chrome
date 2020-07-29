@@ -4,7 +4,7 @@ let btnLocal = document.getElementById('btn-local');
 
 let devUrl = "http://www1.dev.odamax.com";
 let productionUrl = "http://www.odamax.com";
-let localUrl = "http://localhost:8080"
+let localUrl = "http://localhost:8080";
 
 let url;
 
@@ -14,10 +14,18 @@ chrome.tabs.query({ active: true }, function (tab) {
 document.querySelectorAll('button').forEach(function (currentBtn) {
 
     currentBtn.addEventListener('click', function () {
-
-        let pathIndex = url.indexOf('.com');
-        let path = url.substring(pathIndex + 4);
-
+        let pathIndex;
+        let path;
+        
+        if(url.indexOf('.com') > 0) {
+            pathIndex = url.indexOf('.com');
+            path = url.substring(pathIndex + 4);
+        }
+        else {
+            pathIndex = url.indexOf('localhost');
+            path = url.substring(pathIndex + 14);
+        }
+        
         if (this.id == 'btn-dev1') {
             chrome.tabs.update({ url: devUrl + path });
         }
